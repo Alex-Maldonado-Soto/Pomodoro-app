@@ -22,7 +22,7 @@ JavaScript: Lógica del temporizador y funcionalidad interactiva.
 Clona el repositorio:
 bash
 Copiar código
-git clone https://github.com/tu-usuario/pomodoro-timer-app.git
+git clone https://github.com/Alex-Maldonado-Soto/pomodoro-timer-app.git
 Navega a la carpeta del proyecto:
 bash
 Copiar código
