@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css" rel="stylesheet" href="style.css"></style>
+    <title>Pomodoro App</title>
+  </head>
+  <body>
+    <h1>Pomodoro App</h1>
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li><a href="#pomodoro">Pomodoro</a></li>
+        <li><a href="#short-break">Short Break</a></li>
+        <li><a href="#long-break">Long Break</a></li>
+      </ul>
+    </nav>
+    <!-- Clock and circle -->
+    <main class="container">
+      <div class="container__clock">
+        <span id="circule"></span>
+        <span id="time">25:00</span>
+        <span id="state">Pause</span>
+      </div>
+    </main>
+    <!-- Settings -->
+    <button type="button" id="settings">Settings</button>
+
+    <!-- Settings Card -->
+    <aside class="settingsCard">
+      <div class="settingsCard__shadow"></div>
+      <div class="settingsCard__content">
+        <div class="settingsCard__content--header">
+          <h2>Settings</h2>
+          <button type="button" id="closeSettings">X</button>
+        </div>
+        <div class="settingsCard__content--time">
+          <h3>Time (minutes)</h3>
+          <label for="pomodoro"></label>
+          <input type="number" id="pomodoro" value="25" />
+          <label for="short-break"></label>
+          <input type="number" id="short-break" value="5" />
+          <label for="long-break"></label>
+          <input type="number" id="long-break" value="15" />
+        </div>
+        <div class="settingsCard__content--font">
+          <h3>Font</h3>
+          <button>Red</button>
+          <button>Blue</button>
+          <button>Purple</button>
+        </div>
+        <div class="settingsCard__content--color">
+          <h3>Color</h3>
+          <button>Red</button>
+          <button>Blue</button>
+          <button>Purple</button>
+        </div>
+        <button
+          type="button"
+          id="saveSettings"
+          class="settingsCard__content--apply"
+        >
+          Apply
+        </button>
+      </div>
+    </aside>
+
+    <!-- Script principal -->
+    <script src="./app.js"></script>
+  </body>
+</html>
