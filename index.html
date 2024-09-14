@@ -4,67 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style type="text/css" rel="stylesheet" href="style.css"></style>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <title>Pomodoro App</title>
   </head>
-  <body>
-    <h1>Pomodoro App</h1>
+  <body id="body">
+    <div class="settingsCard__shadow" id="shadow"></div>
+    <h1>Pomodoro</h1>
     <!-- Navbar -->
-    <nav>
-      <ul>
-        <li><a href="#pomodoro">Pomodoro</a></li>
-        <li><a href="#short-break">Short Break</a></li>
-        <li><a href="#long-break">Long Break</a></li>
+    <nav class="navbar">
+      <ul class="navbar__list">
+        <li id="pomodoroNav" class="navbar__list--active">Pomodoro</li>
+        <li id="shortBreakNav">Short Break</li>
+        <li id="longBreakNav">Long Break</li>
       </ul>
     </nav>
     <!-- Clock and circle -->
     <main class="container">
       <div class="container__clock">
-        <span id="circule"></span>
-        <span id="time">25:00</span>
-        <span id="state">Pause</span>
+        <span class="container__clock--circle" id="circule"></span>
+        <span
+          class="container__clock--progres"
+          id="progres"
+          style="--progres: 70"
+        ></span>
+        <span class="container__clock--time" id="time"></span>
+        <span class="container__clock--state" id="state">Pause</span>
       </div>
     </main>
     <!-- Settings -->
-    <button type="button" id="settings">Settings</button>
+    <span class="material-symbols-outlined" id="settings"> settings </span>
 
     <!-- Settings Card -->
-    <aside class="settingsCard">
-      <div class="settingsCard__shadow"></div>
-      <div class="settingsCard__content">
-        <div class="settingsCard__content--header">
-          <h2>Settings</h2>
-          <button type="button" id="closeSettings">X</button>
-        </div>
-        <div class="settingsCard__content--time">
-          <h3>Time (minutes)</h3>
-          <label for="pomodoro"></label>
-          <input type="number" id="pomodoro" value="25" />
-          <label for="short-break"></label>
-          <input type="number" id="short-break" value="5" />
-          <label for="long-break"></label>
-          <input type="number" id="long-break" value="15" />
-        </div>
-        <div class="settingsCard__content--font">
-          <h3>Font</h3>
-          <button>Red</button>
-          <button>Blue</button>
-          <button>Purple</button>
-        </div>
-        <div class="settingsCard__content--color">
-          <h3>Color</h3>
-          <button>Red</button>
-          <button>Blue</button>
-          <button>Purple</button>
-        </div>
-        <button
-          type="button"
-          id="saveSettings"
-          class="settingsCard__content--apply"
-        >
-          Apply
+    <form class="settingsCard" action="" method="post" id="settingsCard">
+      <div class="settingsCard__header">
+        <h2>Settings</h2>
+        <button class="material-symbols-outlined" id="closeSettings">
+          close
         </button>
       </div>
-    </aside>
+      <div class="divider"></div>
+      <div class="settingsCard__time">
+        <h3>Time (minutes)</h3>
+        <div class="settingsCard__time--form">
+          <label for="pomodoro">pomodoro</label>
+          <input type="number" id="pomodoro" value="25" />
+          <label for="short-break">short break</label>
+          <input type="number" id="short-break" value="5" />
+          <label for="long-break">long break</label>
+          <input type="number" id="long-break" value="15" />
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="settingsCard__font">
+        <h3>Font</h3>
+        <input type="radio" id="josefin" name="font" value="josefin" />
+        <label
+          for="josefin"
+          class="material-symbols-outlined settingsCard__font--button"
+        >
+          match_case
+        </label>
+        <input type="radio" id="barlow" name="font" value="barlow" />
+        <label
+          for="barlow"
+          class="material-symbols-outlined settingsCard__font--button"
+        >
+          match_case
+        </label>
+        <input type="radio" id="roboto" name="font" value="roboto" />
+        <label
+          for="roboto"
+          class="material-symbols-outlined settingsCard__font--button"
+        >
+          match_case
+        </label>
+      </div>
+      <div class="divider"></div>
+      <div class="settingsCard__color">
+        <h3>Color</h3>
+
+        <input type="radio" id="FirstColor" name="color" value="#f87070" />
+        <label
+          style="--main-color: #f87070"
+          for="FirstColor"
+          class="material-symbols-outlined settingsCard__color--button"
+        ></label>
+
+        <input type="radio" id="SecondColor" name="color" value="#7070f8" />
+        <label
+          for="SecondColor"
+          style="--main-color: #7070f8"
+          class="material-symbols-outlined settingsCard__color--button"
+        ></label>
+  <input type="radio" id="ThirdColor" name="color" value="#37b227" />
+        <label
+          for="ThirdColor"
+          style="--main-color: #37b227"
+          class="material-symbols-outlined settingsCard__color--button"
+        ></label>
+      </div>
+      <button type="submit" id="saveSettings" class="settingsCard__apply">
+        Apply
+      </button>
+    </form>
 
     <!-- Script principal -->
     <script src="./app.js"></script>
